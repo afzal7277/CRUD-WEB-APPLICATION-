@@ -1,0 +1,90 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+
+
+
+<body background="/static/doc1.png">
+
+
+
+<title>Home</title>
+<center><h1>Patient Details</h1></center><br>
+<form action="{{url_for('index')}}" method="post" >
+  <center>
+<table>
+<tr>
+  <td><strong>Patient's Name : </strong></td>
+  <td><input type="text" name="name" required="True" SIZE="25" style="border-radius: 6px;" ></td>
+</tr>
+
+  <tr>
+    <td><strong>Patient's Sex : </strong></td>
+    <td>  <input type="text" name="sex" required="True" SIZE="25" style="border-radius: 6px;" ></td>
+  </tr>
+
+
+  <tr>
+    <td><strong>Patient's Age : </strong></td>
+    <td><input type="text"  name="age" required="True" SIZE="25" style="border-radius: 6px;"></td>
+  </tr>
+
+
+    <tr>
+      <td><strong>Doctor's Name : </strong> </td>
+      <td><input type="text" name="doc" required="True" SIZE="25" style="border-radius: 6px;"></td>
+    </tr>
+
+
+  <tr>
+    <td><strong>Guardian's Name :</strong></td>
+    <td><input type="text" name="parname" required="True" SIZE="25" style="border-radius: 6px;"></td>
+  </tr>
+
+
+  <tr>
+    <td><strong>Phone No. : </strong></td>
+    <td><input type="text" name="ph" required="True" SIZE="25" style="border-radius: 6px;" id="edit-title-input"></td>
+  </tr>
+
+
+
+
+
+</table>
+<br>
+<input class="btn btn-primary" type="Submit" value="Submit" style='margin-left:100px'  button id ="edit-submit" disabled onclick="myFunction()">
+<a class="btn btn-primary" href="{{url_for('display')}}" role="button">View</a>
+
+</center>
+</form>
+
+
+<script>
+function myFunction() {
+  alert("Contact Successfully Added");
+}
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $('#edit-title-input').on('keyup', stateHandle);
+
+  function stateHandle(e) {
+    var text = $('#edit-title-input').val();
+    var regex = text.replace(/ /g,'');
+    if (regex.length == 0) {
+      $('#edit-submit').attr('disabled', true);
+    } else {
+      $('#edit-submit').removeAttr('disabled');
+    }
+  }
+
+</script>
+
+
+</body>

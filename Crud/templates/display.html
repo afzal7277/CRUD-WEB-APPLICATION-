@@ -1,0 +1,49 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+
+
+<style>
+  h2 {
+    text-align: center;
+}
+
+</style>
+
+<body background="/static/doc1.png">
+<h2 textalign="center">Patient Log</h2>
+
+<table class="table table-striped table-hover">
+<tr>
+  <th>S.No</th>
+  <th>Patient Name</th>
+  <th>Sex</th>
+  <th>Age</th>
+  <th>Doctor's Name</th>
+  <th>Guardian Name</th>
+  <th>Phone Number</th>
+  <th>Update</th>
+  <th>Delete</th>
+</tr>
+{%for i in info%}
+<tr>
+  <!-- <td>{{loop.index}}</td> -->
+  <td>{{i.id}}</td>
+  <td>{{i.pt_name}}</td>
+  <td>{{i.sex}}</td>
+  <td>{{i.age}}</td>
+  <td>{{i.doc_name}}</td>
+  <td>{{i.par_name}}</td>
+  <td>{{i.ph_num}}</td>
+  <td><a class="btn btn-light" href="/update/{{i.id}}" role="button">edit</a></td>
+  <td><a class="btn btn-danger" href="/delete/{{i.id}}" onclick="return confirm('Are you sure want to delete it?')" >del</a></td>
+</tr>
+{%endfor%}
+</table>
+<h2><a class="btn btn-primary" href="{{url_for('index')}}" role="button" style="width:120px;">HOME</a>
+</h2>
+
+</body>

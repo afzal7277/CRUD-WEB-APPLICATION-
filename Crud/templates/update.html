@@ -1,0 +1,64 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+<body background="/static/doc1.png">
+<center><h1>Edit Details</h1></center><br>
+
+
+
+<form action="" method="post">
+  <center>
+<table>
+<tr>
+  <td><strong>Patient's Name : </strong></td>
+  <td><input type="text" name="name" value="{{info.pt_name}}" SIZE="25" style="border-radius: 6px;" ></td>
+</tr>
+
+  <tr>
+    <td><strong>Patient's Sex : </strong></td>
+    <td>  <input type="text" name="sex"  value="{{info.sex}}"  SIZE="25" style="border-radius: 6px;" ></td>
+  </tr>
+
+
+  <tr>
+    <td><strong>Patient's Age : </strong></td>
+    <td><input type="text" name="age" value="{{info.age}}"  SIZE="25" style="border-radius: 6px;"></td>
+  </tr>
+
+
+    <tr>
+      <td><strong>Doctor's Name : </strong> </td>
+      <td><input type="text" name="doc"  value="{{info.doc_name}}" SIZE="25" style="border-radius: 6px;"></td>
+    </tr>
+
+
+  <tr>
+    <td><strong>Guardian's Name :</strong></td>
+    <td><input type="text" name="parname" value="{{info.par_name}}" SIZE="25" style="border-radius: 6px;"></td>
+  </tr>
+
+
+  <tr>
+    <td><strong>Phone No. : </strong></td>
+    <td><input type="text" name="ph"  value="{{info.ph_num}}" SIZE="25" style="border-radius: 6px;"></td>
+  </tr>
+
+
+
+
+
+</table>
+<br>
+<input class="btn btn-primary" type="Submit" value="Submit" style='margin-left:100px' onclick="return alert('updated successfully')" >
+<a class="btn btn-primary" href="{{url_for('display')}}" role="button">Cancel</a>
+
+</center>
+</form>
+
+
+
+
+</body>
